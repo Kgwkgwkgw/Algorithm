@@ -21,7 +21,7 @@ public class B_2667 {
 		// 사각형 만들기 
 		for(int i=0;i<rectSize;i++) {
 			String line = sc.nextLine();
-			for(int j=0;j<line.length();j++) {
+			for(int j=0;j<rectSize;j++) {
 				rect[i][j]= line.charAt(j)-'0';
 			}
 		}
@@ -55,7 +55,9 @@ public class B_2667 {
 		if(rectVisted[i][j] || rect[i][j]==0)
 			return 0;
 		rectVisted[i][j] = true;
-		return 1 + solve(i+1, j)+ solve(i-1, j)+ solve(i, j+1)+ solve(i,j-1);
+		int result=1; 
+		result = result+ solve(i+1, j)+solve(i-1, j)+ solve(i, j+1)+ solve(i,j-1);
+		return result;
 		
 	}
 }
